@@ -11,22 +11,31 @@
 <body>
     <div class="container">
 
-        <div class="mb-4">      
-            <div class="form-group" style="max-width: 40rem;">
-                <form name="getByCityNameButton">
-                    <label class="form-label mt-4">
-                        Get weather forecast in selected city
-                    </label>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <input type="text" name="cityname" class="form-control" placeholder="City" aria-label="City" aria-describedby="button-addon2">
-                            <button class="btn btn-primary" type="button" id="getByCityNameButton">Check forecast</button>
+        <div class="container-fluid container-cityname">
+
+            <div class="mb-4">      
+                <div class="form-group" style="max-width: 40rem;">
+                    <form name="getByCityNameButton">
+                        <label class="form-label mt-4">
+                            Get weather forecast in selected city
+                        </label>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" name="cityname" value="Minsk" class="form-control" placeholder="City" aria-label="City" aria-describedby="button-addon2">
+                                <button class="btn btn-primary" type="button" id="getByCityNameButton">Check forecast</button>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <div class="cityname-forecast-list">
+
+                </div>
             </div>
         </div>
-
+            
         <div class="container-fluid container-geolocation">
 
             <div class="mb-4">
@@ -36,7 +45,7 @@
             </div>
             
             <div class="mb-4">
-                <div class="geolocation-forecast-list container-fluid">
+                <div class="geolocation-forecast-list">
                     <div class="row gy-4">
                     </div>
                 </div>
@@ -47,6 +56,6 @@
 
 </body>
 
-<script type="text/javascript" src="script.js"></script>
 <script type="text/javascript" src="config.js"></script>
+<script type="text/javascript" src="script.js"></script>
 </html>
