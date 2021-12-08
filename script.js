@@ -61,16 +61,26 @@ function showForecastData(data, targetElement) {
   let colDiv = document.createElement("div");
   colDiv.classList = "col";
 
+  let arrow = 
+              `<svg height="8" style="transform: rotate(${data["wind"]["deg"] + 90}deg)" xmlns="http://www.w3.org/2000/svg" viewBox="0 10 180 80">
+                  <defs>
+                      <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="0" refY="3.5" orient="auto">
+                          <polygon points="0 0, 10 3.5, 0 7" />
+                      </marker>
+                  </defs>
+                  <line x1="0" y1="50" x2="100" y2="50" stroke="#000" stroke-width="8" marker-end="url(#arrowhead)" />
+              </svg>`;
+
   colDiv.innerHTML =
-    `<div class="card border-primary col-sm-12" style="min-width:16rem">
-                        <div class="card-body" style="background: url(${getWeatherImagePath(weatherValue)});">
-                          <h4 class="card-title temperature_header">${data["name"]}</h4>
-                          <p class="card-text temperature_value">${Math.round(data["main"]["temp"])} °C, ${weatherArray[0]["description"]}</p>
-                          <p class="card-text temperature_time ">${data["wind"]["speed"]}m/s ${getWindDirection(data["wind"]["deg"])}, ${data["main"]["pressure"]}hPa</p>
-                          <p class="card-text temperature_value text-muted">feels like ${Math.round(data["main"]["feels_like"])} °C</p>
-                          <p class="card-text temperature_time text-muted">${getCurrentTimeString()}</p>
-                        </div>
-                      </div>`;
+                    `<div class="card border-primary col-sm-12" style="min-width:16rem">
+                      <div class="card-body" style="background: url(${getWeatherImagePath(weatherValue)});">
+                      <h4 class="card-title temperature_header">${data["name"]}</h4>
+                      <span class="card-text temperature_value">${Math.round(data["main"]["temp"])} °C, ${weatherArray[0]["description"]}</span><br/>
+                      ${arrow}<span class="card-text temperature_time ">${data["wind"]["speed"]}m/s ${getWindDirection(data["wind"]["deg"])}, ${data["main"]["pressure"]}hPa</span>
+                        <p class="card-text temperature_value text-muted">feels like ${Math.round(data["main"]["feels_like"])} °C</p>
+                        <p class="card-text temperature_time text-muted">${getCurrentTimeString()}</p>
+                      </div>
+                    </div>`;
   targetElement.appendChild(colDiv);
 }
 
