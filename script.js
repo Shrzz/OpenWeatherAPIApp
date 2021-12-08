@@ -21,12 +21,6 @@ getByGeolocationButton.addEventListener("click", () => {
   navigator.geolocation.getCurrentPosition(getGeolocationSuccess, getGeolocationError, options);
 });
 
-
-/* Execution */
-
-getByGeolocationButton.click();
-
-
 /* OpenWeatherAPI methods */
 
 /* request data and process it */
