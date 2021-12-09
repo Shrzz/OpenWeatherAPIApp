@@ -59,20 +59,20 @@ function showForecastData(data, targetElement) {
               `<svg height="8" style="transform: rotate(${data["wind"]["deg"] + 90}deg)" xmlns="http://www.w3.org/2000/svg" viewBox="0 10 180 80">
                   <defs>
                       <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="0" refY="3.5" orient="auto">
-                          <polygon points="0 0, 10 3.5, 0 7" />
+                          <polygon points="0 0, 10 3.5, 0 7" fill="white"/>
                       </marker>
                   </defs>
-                  <line x1="0" y1="50" x2="100" y2="50" stroke="#000" stroke-width="8" marker-end="url(#arrowhead)" />
-              </svg>`;
+                  <line x1="0" y1="50" x2="100" y2="50" stroke="white" stroke-width="8" marker-end="url(#arrowhead)" />
+              </svg> `;
 
   colDiv.innerHTML =
-                    `<div class="card border-primary col-sm-12" style="min-width:16rem">
-                      <div class="card-body" style="background: url(${getWeatherImagePath(weatherValue)});">
+                    `<div class="card text-white weather-card border-primary col-sm-12" style="background: url(${getWeatherImagePath(weatherValue)}); background-size: cover;">
+                      <div class="card-body weather-card-body">
                       <h4 class="card-title temperature_header">${data["name"]}</h4>
                       <span class="card-text temperature_value">${Math.round(data["main"]["temp"])} °C, ${weatherArray[0]["description"]}</span><br/>
                       ${arrow}<span class="card-text temperature_time ">${data["wind"]["speed"]}m/s ${getWindDirection(data["wind"]["deg"])}, ${data["main"]["pressure"]}hPa</span>
-                        <p class="card-text temperature_value text-muted">feels like ${Math.round(data["main"]["feels_like"])} °C</p>
-                        <p class="card-text temperature_time text-muted">${getCurrentTimeString()}</p>
+                        <p class="card-text temperature_value">feels like ${Math.round(data["main"]["feels_like"])} °C</p>
+                        <p class="card-text temperature_time">${getCurrentTimeString()}</p>
                       </div>
                     </div>`;
   targetElement.appendChild(colDiv);
@@ -82,17 +82,18 @@ function showForecastData(data, targetElement) {
 function getWeatherImagePath(weatherValue) {
   switch (weatherValue) {
     case "clouds":
-      return "/images/rain.jpg";
+      return "/images/clouds.svg";
     case "rain":
-      return "/images/clouds.jpg";
+      return "/images/rain.svg";
     case "clear":
-      return "/images/clear.jpg";
+      return "/images/clear.svg";
     case "snow":
-      return "/images/snow.jpg";
+      return "/images/snow.svg";
     case "haze":
-      return "/images/haze.jpg";
+    case "mist":
+      return "/images/haze.svg";
     default:
-      return "/images/empty.jpg";
+      return "/images/empty.svg";
   }
 }
 
