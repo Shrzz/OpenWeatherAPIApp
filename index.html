@@ -13,55 +13,64 @@
 <body>
     <div class="container">
         
-        <div class="container-fluid container-cityname">
-
+        <!-- get current weather in city by its name -->
+        <div class="container-fluid">
+            <h1>Get current weather in a selected city</h1>
             <div class="mb-4">
                 <div class="form-group" style="max-width: 40rem;">
-                    <form name="getByCityNameButton">
-                        <label class="form-label mt-4">
-                            Get weather forecast in selected city
-                        </label>
+                    <form name="getWeatherByCityNameButton">
                         <div class="form-group">
                             <div class="input-group">
                                 <input type="text" name="cityname" class="form-control" placeholder="City"
                                     aria-label="City" aria-describedby="button-addon2">
-                                <button class="btn btn-primary" type="button" id="getByCityNameButton">Check
+                                <button class="btn btn-primary" type="button" id="getWeatherByCityNameButton">Check
                                     forecast</button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-
-
             <div class="mb-4">
-
-                <div class="cityname-forecast-list">
+                <div class="cityname-weather-list">
                     <div class="row gy-4">
-
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="container-fluid container-geolocation">
-
+        <!-- get current weather by user's geolocation -->
+        <div class="container-fluid">
+            <h1>Current weather near you</h1>
             <div class="mb-4">
-                <button class="btn btn-primary" id="getByGeolocationButton">
-                    Get forecast by geolocation
+                <button class="btn btn-primary" id="getWeatherByGeolocationButton">
+                    Get current weather
                 </button>
             </div>
 
             <div class="mb-4">
-                <div class="geolocation-forecast-list">
+                <div class="geolocation-weather-list">
                     <div class="row gy-4">
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- get 5 day forecast for selected geolocation -->
+        <div class="container-fluid mb-4">
+            <div class="mb-4 gy-4">
+                <h1>5 day forecast for your location</h1>
+                <button class="btn btn-primary" id="getForecastByGeolocationButton">
+                    Get 5 day forecast
+                </button>
+            </div>
+
+            <div class="geolocation-forecast-list">
+                <div class="row gy-4">
+
+                </div>
+            </div>
+        </div>
     </div>
-
-
 </body>
 
 <script type="text/javascript" src="config.js"></script>
