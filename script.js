@@ -285,13 +285,13 @@ function getSettingsStringForGeolocationWeather(latitude, longitude, citiesAmoun
   return `https://api.openweathermap.org/data/2.5/find?lat=${latitude}&lon=${longitude}&cnt=${citiesAmount + 1}&units=metric&appid=${weatherApiKey}`;
 }
 
-/* get api settings string for getting 5 day forecast using city name */
+/* get api settings string for getting forecast using city name */
 function getSettingsStringForCityNameForecast(cityName) {
   return `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=metric&appid=${weatherApiKey}`;
 }
 
-/* get api settings string for getting 5 day forecast for area near user using user's coordinates */
-function getSettingsStringForGeolocationForecast(latitude, longitude, stampsAmount = 40) {
+/* get api settings string for getting forecast for area near user using user's coordinates */
+function getSettingsStringForGeolocationForecast(latitude, longitude, stampsAmount = 36) {
   return `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&cnt=${stampsAmount}&units=metric&appid=${weatherApiKey}`;
 }
 
