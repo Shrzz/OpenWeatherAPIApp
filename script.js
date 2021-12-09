@@ -82,18 +82,18 @@ function showForecastData(data, targetElement) {
 function getWeatherImagePath(weatherValue) {
   switch (weatherValue) {
     case "clouds":
-      return "/images/clouds.svg";
+      return "./images/clouds.svg";
     case "rain":
-      return "/images/rain.svg";
+      return "./images/rain.svg";
     case "clear":
-      return "/images/clear.svg";
+      return "./images/clear.svg";
     case "snow":
-      return "/images/snow.svg";
+      return "./images/snow.svg";
     case "haze":
     case "mist":
-      return "/images/haze.svg";
+      return "./images/haze.svg";
     default:
-      return "/images/empty.svg";
+      return "./images/empty.svg";
   }
 }
 
